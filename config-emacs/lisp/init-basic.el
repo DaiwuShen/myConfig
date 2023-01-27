@@ -1,5 +1,6 @@
 ;;;基础配置
-(setq tab-always-indent 'complete;设置tab键作补全
+(setq initial-frame-alist '((width . 100))
+ tab-always-indent 'complete;设置tab键作补全
       inhibit-startup-message t             ; 关闭启动 Emacs 时的欢迎界面
       mouse-wheel-progressive-speed nil;设置鼠标滚动速度
       make-backup-files nil;关闭自动备份

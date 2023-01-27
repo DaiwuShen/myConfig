@@ -114,6 +114,14 @@
 (use-package treemacs-projectile
   :after (treemacs projectile))
 
+;; git
+(use-package magit)
+
+(use-package git-gutter+
+  :config
+  (progn
+    (global-git-gutter+-mode)))
+
 ;;; 美化相关
 ;; dashboard
 (use-package dashboard
@@ -142,7 +150,12 @@
   )
 
 ;;; 主模式
-;(use-package json-mode)
-;(use-package protobuf-mode)
+(use-package json-mode
+  :mode("\\.json'" . json-mode))
+
+(use-package markdown-mode
+  :mode("\\.md\\'" . gfm-mode)
+  :init (setq markdown-command "multimarkdown"))
+
 
 (provide 'init-packages)
