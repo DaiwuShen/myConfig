@@ -1,6 +1,6 @@
 # myConfig
 - [Description](#Description)
-- [Configuration List](#List)
+- [List](#List)
 - [config-emacs](#config-emacs)
 - [config-vim](#config-vim)
 ## Description
