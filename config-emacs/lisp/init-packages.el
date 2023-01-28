@@ -1,50 +1,55 @@
 ;;;; 内置包
 ;;; 功能优化
-
-(use-package electric-pair
+(use-package electric-pair-mode
   :ensure nil
   :hook(after-init . electric-pair-mode))
 
-(use-package show-paren
+(use-package show-paren-mode
   :ensure nil
   :hook(after-init . show-paren-mode))
 
-(use-package column-number
+(use-package column-number-mode
   :ensure nil
   :hook(after-init . column-number-mode))
 
-(use-package global-auto-revert
+(use-package global-auto-revert-mode
   :ensure nil
   :hook(after-init . global-auto-revert-mode))
 
-(use-package delete-selection
+(use-package delete-selection-mode
   :ensure nil
   :hook(after-init . delete-selection-mode))
 
-(use-package global-display-line-numbers
+(use-package global-display-line-numbers-mode
   :ensure nil
   :hook(after-init . global-display-line-numbers-mode))
 
-(use-package global-hl-line
+(use-package global-hl-line-mode
   :ensure nil
   :hook (after-init . global-hl-line-mode)
 )
   
-(use-package tool-bar
+(use-package tool-bar-mode
   :ensure nil
   :init
   (tool-bar-mode 0))
 
-(use-package size-indication
+(use-package size-indication-mode
   :ensure nil
   :hook(after-init . size-indication-mode))
 
-(use-package display-battery
+(use-package display-battery-mode
   :ensure nil
   :hook(after-init . display-battery-mode))
 
+(use-package winner-mode
+  :ensure nil
+  :hook (after-init . winner-mode)
+  :bind (("C-c <left>" . winner-undo)
+	 ("C-c <right>" . winner-redo)))
+
 ;; 保存历史记录
-(use-package savehist
+(use-package savehist-mode
   :ensure nil
   :hook (after-init . savehist-mode)
   :init (setq enable-recursive-minibuffers t
@@ -57,17 +62,16 @@
 	      savehist-autosave-interval 300))
 
 ;; 保存光标位置
-(use-package save-place
+(use-package save-place-mode
   :ensure nil
   :hook(after-init . save-place-mode))
 
 ;; 最近打开的列表
-(use-package recentf
+(use-package recentf-mode
   :ensure nil
   :config
   (setq recentf-max-menu-items 5)
   :hook (after-init . recentf-mode))
-
 
 ;;;; 用户包
 ;;; 功能优化
@@ -91,7 +95,7 @@
 	treemacs-show-hidden-files t)
   :bind
   (:map global-map
-	("C-<tab>" . treemacs-select-window)
+	("C-1" . treemacs-select-window)
 	("C-c t t" . treemacs)
 	("C-c t d" . treemacs-select-directory)
 	)
